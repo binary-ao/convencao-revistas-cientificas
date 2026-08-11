@@ -1,0 +1,21 @@
+// ==========================================================================
+// Entry point Vite — 1ª Convenção Nacional de Revistas Científicas Angolanas
+// Bootstrap 5 é o único framework CSS do projecto (sem Tailwind).
+// ==========================================================================
+
+// Tipografia auto-hospedada (sem dependência de CDN externo)
+@import "@fontsource-variable/inter";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// 1. Funções do Bootstrap (necessárias antes de qualquer override de variável)
+@import "bootstrap/scss/functions";
+
+// 2. Overrides institucionais — paleta, tipografia, bordas quadradas
+@import "../sass/variables";
+
+// 3. Bootstrap completo, já com as variáveis acima aplicadas
+@import "bootstrap/scss/bootstrap";
+
+// 4. Camada institucional própria
+@import "../sass/tokens";
+@import "../sass/components";

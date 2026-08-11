@@ -1,0 +1,122 @@
+// ==========================================================================
+// Bootstrap variable overrides — identidade institucional CNRCA
+// Importado ANTES de "bootstrap/scss/bootstrap" em resources/css/app.scss.
+// Todas as variáveis abaixo têm "!default" no Bootstrap, por isso o primeiro
+// valor definido (o nosso) prevalece. Não editar ficheiros em vendor/node_modules.
+// ==========================================================================
+
+// --- Paleta institucional -------------------------------------------------
+$cnrca-primary:        #1F3B57; // azul-petróleo institucional
+$cnrca-primary-dark:   #14293C;
+$cnrca-secondary:      #A8672E; // ocre discreto — apenas estados/destaques
+$cnrca-dark:           #14181A;
+$cnrca-text:           #14181A;
+$cnrca-muted:          #5A6266;
+$cnrca-border:         #DCE1E2;
+$cnrca-background:     #FFFFFF;
+$cnrca-surface:        #F5F7F6;
+$cnrca-success:        #2F6F4E;
+$cnrca-warning:        #B8863A;
+$cnrca-danger:         #A23B3B;
+$cnrca-info:           #3A6E86;
+
+$primary:       $cnrca-primary;
+$secondary:     $cnrca-secondary;
+$success:       $cnrca-success;
+$info:          $cnrca-info;
+$warning:       $cnrca-warning;
+$danger:        $cnrca-danger;
+$dark:          $cnrca-dark;
+$light:         $cnrca-surface;
+
+$body-color:    $cnrca-text;
+$body-bg:       $cnrca-background;
+$border-color:  $cnrca-border;
+
+$min-contrast-ratio: 3.5;
+
+// --- Tipografia -------------------------------------------------------------
+// Inter (auto-hospedada via @fontsource-variable/inter) para todo o texto —
+// display, títulos e corpo — conforme secção 12 do Termo (máx. 2 famílias;
+// aqui usa-se uma só, diferenciada por peso/tamanho).
+$font-family-sans-serif: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-monospace: "SFMono-Regular", Consolas, "Cascadia Code", Menlo, monospace;
+
+$headings-font-weight: 600;
+$headings-letter-spacing: -0.01em;
+$font-weight-bold: 700;
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.1rem;
+$h6-font-size: 1rem;
+
+$small-font-size: 0.8125rem;
+
+// --- Bordas quadradas — regra obrigatória (secção 9 do Termo) --------------
+// Zero em toda a hierarquia de raios do Bootstrap, sem excepção.
+$border-radius:            0;
+$border-radius-sm:         0;
+$border-radius-lg:         0;
+$border-radius-xl:         0;
+$border-radius-xxl:        0;
+$border-radius-pill:       0;
+
+$btn-border-radius:        0;
+$btn-border-radius-sm:     0;
+$btn-border-radius-lg:     0;
+
+$input-border-radius:      0;
+$input-border-radius-sm:   0;
+$input-border-radius-lg:   0;
+
+$card-border-radius:       0;
+$card-inner-border-radius: 0;
+
+$modal-content-border-radius: 0;
+$badge-border-radius:      0;
+$alert-border-radius:      0;
+$dropdown-border-radius:   0;
+$nav-pills-border-radius:  0;
+$progress-border-radius:   0;
+$list-group-border-radius: 0;
+$pagination-border-radius: 0;
+$tooltip-border-radius:    0;
+$popover-border-radius:    0;
+$toast-border-radius:      0;
+$offcanvas-border-radius:  0;
+
+// --- Sombras discretas -------------------------------------------------------
+// Sem sombras pesadas nem elementos flutuantes (secção 8/54 do Termo).
+$enable-shadows:      false;
+$btn-box-shadow:      none;
+$btn-focus-box-shadow: 0 0 0 0.15rem rgba($cnrca-primary, 0.35);
+$input-box-shadow:    none;
+$input-focus-box-shadow: 0 0 0 0.15rem rgba($cnrca-primary, 0.25);
+$card-box-shadow:     none;
+$dropdown-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+$modal-content-box-shadow-xs: none;
+$modal-content-box-shadow-sm-up: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+// --- Espaço, grelha e bordas finas -----------------------------------------
+$border-width: 1px;
+$grid-gutter-width: 2rem;
+
+// --- Componentes específicos --------------------------------------------
+$card-border-color: $cnrca-border;
+$card-cap-bg: $cnrca-background;
+$navbar-light-color: $cnrca-text;
+$navbar-light-hover-color: $cnrca-primary;
+$navbar-light-active-color: $cnrca-primary;
+
+$link-decoration: none;
+$link-hover-color: $cnrca-primary-dark;
+
+$table-border-color: $cnrca-border;
+$table-cell-padding-y: 0.65rem;
+$table-cell-padding-x: 0.85rem;
+
+$transition-base: all 0.15s ease-in-out;

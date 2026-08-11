@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /admin
+Disallow: /inscricao/consultar
+Disallow: /certificado/validar
+
+Sitemap: http://localhost:8000/sitemap.xml

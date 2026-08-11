@@ -1,0 +1,230 @@
+// ==========================================================================
+// Camada institucional sobre o Bootstrap — padrões editoriais reutilizados
+// pelas páginas públicas e pelo admin. Mantém-se pequena de propósito:
+// cresce nas Fases 2+ conforme os componentes Blade forem sendo criados.
+// ==========================================================================
+
+// Bootstrap já sai com border-radius: 0 via _variables.scss; isto é apenas
+// uma rede de segurança contra utilitários .rounded-* usados por engano.
+[class*="rounded"] {
+    border-radius: 0 !important;
+}
+
+// --- Rótulo editorial (eyebrow) --------------------------------------------
+// Usado antes de títulos de secção para dar contexto sem repetir "01/02/03"
+// onde a ordem não é, de facto, uma sequência.
+.eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+}
+
+// --- Divisores finos ---------------------------------------------------------
+.hr-thin {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 3rem 0;
+}
+
+// --- Cabeçalho ----------------------------------------------------------------
+.site-header {
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+
+    .navbar-brand {
+        font-weight: 700;
+        letter-spacing: -0.01em;
+    }
+
+    &.is-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+}
+
+// --- Rodapé institucional -----------------------------------------------------
+.site-footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+
+    a {
+        color: var(--color-muted);
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    .footer-heading {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--color-text);
+        margin-bottom: 0.75rem;
+    }
+}
+
+// --- Bloco numerado (objectivos, temas) ---------------------------------------
+// Só usar numeração quando a ordem é, de facto, informativa (ver secção 22/20
+// da arquitectura) — não como decoração por omissão.
+.numbered-block {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+
+    .numbered-block__index {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--color-secondary);
+        line-height: 1;
+    }
+}
+
+// --- Pílulas de estado ---------------------------------------------------------
+// Uma única componente para os vários enums do sistema (inscrição, pagamento,
+// check-in, certificado, parceiro) — a cor vem do significado, não do texto.
+.status-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.55rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted);
+    background: transparent;
+
+    &--positive { color: #2F6F4E; border-color: #2F6F4E; }
+    &--warning  { color: #B8863A; border-color: #B8863A; }
+    &--negative { color: #A23B3B; border-color: #A23B3B; }
+    &--info     { color: var(--color-primary); border-color: var(--color-primary); }
+}
+
+// --- Hero -----------------------------------------------------------------------
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    .hero-pattern {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        color: var(--color-primary);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.hero--image {
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(14, 32, 51, 0.55) 0%, rgba(14, 32, 51, 0.78) 100%);
+            z-index: 0;
+        }
+
+        .hero-content p,
+        .hero-content .footer-heading {
+            color: rgba(255, 255, 255, 0.75) !important;
+        }
+    }
+}
+
+.hero-carousel {
+    .carousel-indicators {
+        bottom: 0;
+
+        [data-bs-target] {
+            background-color: var(--color-primary);
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 4%;
+        opacity: 0.6;
+    }
+}
+
+// --- Avatar por iniciais ----------------------------------------------------------
+.avatar-initials {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+// --- Contador (countdown) -------------------------------------------------------
+.countdown {
+    display: flex;
+    gap: 1.5rem;
+
+    .countdown__unit {
+        text-align: center;
+
+        .countdown__value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+        }
+
+        .countdown__label {
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+    }
+}
+
+// --- Painel admin: estrutura base ------------------------------------------------
+.admin-shell {
+    display: flex;
+    min-height: 100vh;
+
+    .admin-sidebar {
+        width: 260px;
+        flex: 0 0 260px;
+        background: var(--color-dark);
+        color: #fff;
+    }
+
+    .admin-main {
+        flex: 1;
+        min-width: 0;
+        background: var(--color-surface);
+    }
+}
+
+.kpi-card {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    padding: 1.25rem 1.5rem;
+
+    .kpi-card__label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-muted);
+    }
+
+    .kpi-card__value {
+        font-size: 2rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+    }
+}

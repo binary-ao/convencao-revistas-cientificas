@@ -1,0 +1,20 @@
+// ==========================================================================
+// Custom properties institucionais — espelham as variáveis Sass da secção K
+// da arquitectura, para serem lidas por CSS simples ou JS sem recompilar.
+// ==========================================================================
+
+:root {
+    --color-primary: #{$cnrca-primary};
+    --color-primary-dark: #{$cnrca-primary-dark};
+    --color-secondary: #{$cnrca-secondary};
+    --color-dark: #{$cnrca-dark};
+    --color-text: #{$cnrca-text};
+    --color-muted: #{$cnrca-muted};
+    --color-border: #{$cnrca-border};
+    --color-background: #{$cnrca-background};
+    --color-surface: #{$cnrca-surface};
+
+    --font-display: #{$font-family-sans-serif};
+    --font-body: #{$font-family-sans-serif};
+    --font-mono: #{$font-family-monospace};
+}
